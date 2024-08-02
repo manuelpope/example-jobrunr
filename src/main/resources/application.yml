@@ -1,0 +1,31 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/xe
+    username: TEST
+    password: 1234
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 30000
+      pool-name: HikariPool
+      max-lifetime: 600000
+      connection-timeout: 30000
+
+  jpa:
+    hibernate:
+      ddl-auto:
+      org.hibernate.SQL: DEBUG
+    show-sql: true
+org:
+  jobrunr:
+    job-scheduler:
+      enabled: true
+    #    jobs:
+    #      default-number-of-retries: 3
+    #      retry-back-off-time-seed: 5
+    database:
+      skip-create: false
+
